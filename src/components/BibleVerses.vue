@@ -1,6 +1,6 @@
 <script setup>
 import { onMounted } from 'vue'
-import { useVersesStore } from '../stores/verses' // Ensure the path is correct
+import { useVersesStore } from '../stores/verses' 
 
 const store = useVersesStore()
 

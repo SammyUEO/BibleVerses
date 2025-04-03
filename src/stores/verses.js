@@ -83,14 +83,14 @@ export const useVersesStore = defineStore('verses', {
         this.loading = true
         this.error = null
 
-        // Alege o carte aleatorie
+        
         const randomIndexBook = Math.floor(Math.random() * bibleBooks.length)
         const randomBook = bibleBooks[randomIndexBook]
         const bookNumber = randomBook.number
         const bookName = randomBook.name
         const totalChapters = randomBook.chapters
 
-        // Alege un capitol aleatoriu din cartea aleasă
+        
         const randomChapter = Math.floor(Math.random() * totalChapters) + 1
 
         const apiUrl = `https://api.getbible.net/v2/kjv/${bookNumber}/${randomChapter}.json`
@@ -116,7 +116,7 @@ export const useVersesStore = defineStore('verses', {
           return
         }
 
-        // Alege un verset aleatoriu din capitolul ales
+        
         const randomIndexVerse = Math.floor(Math.random() * verses.length)
         const randomVerseData = verses[randomIndexVerse]
 
@@ -129,7 +129,7 @@ export const useVersesStore = defineStore('verses', {
 
           this.currentVerse = newVerse
 
-          // Adaugă la istoric (limitează la 5)
+          
           this.history.unshift(newVerse)
           this.history = this.history.slice(0, 5)
         } else {
